@@ -1,12 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-
-const imageSchema = new mongoose.Schema({
-  filename: { type: String },
-  url: { type: String }
-});
-
 const listingSchema = new Schema({
   title: {
     type: String,

@@ -4,9 +4,12 @@ const mongoose = require("mongoose");       // mongodb use krne k liye
 const Listing = require("./models/listing.js"); // models k liye
 const path = require("path");       // ejs k liye
 const methodOverride = require("method-override");      // edit me PUT use krne k liye
+const ejsMate = require("ejs-mate");    // boilerplate code ko use krne k liye
+
 
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/stayzendhruv";
+
 
 main().then(() => {
     console.log("connected to DB");
@@ -24,6 +27,9 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));     // data ko parse krne k liye
 app.use(methodOverride("_method"));             // edit.ejs k form me PUT request ko use krne k liye
+app.engine('ejs',ejsMate);    // boilerplate code ko use krne k liye
+app.use(express.static(path.join(__dirname,"/public/")));  // static file ko use krne k liye
+
 
 
 // Basic API
