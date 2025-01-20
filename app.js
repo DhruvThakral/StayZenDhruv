@@ -31,7 +31,6 @@ app.engine('ejs',ejsMate);    // boilerplate code ko use krne k liye
 app.use(express.static(path.join(__dirname,"/public/")));  // static file ko use krne k liye
 
 
-
 // Basic API
 app.get("/", (req, res) => {
     res.send("Hi, I am root.");
@@ -83,7 +82,6 @@ app.delete("/listings/:id", async (req, res) => {
   console.log(deletedListing);
   res.redirect("/listings");
 });
-
 
 
 
