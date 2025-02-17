@@ -6,9 +6,7 @@ const path = require("path");       // ejs k liye
 const methodOverride = require("method-override");      // edit me PUT use krne k liye
 const ejsMate = require("ejs-mate");    // boilerplate code ko use krne k liye
 
-
 const MONGO_URL = "mongodb://127.0.0.1:27017/stayzendhruv";
-
 
 main().then(() => {
     console.log("connected to DB");
